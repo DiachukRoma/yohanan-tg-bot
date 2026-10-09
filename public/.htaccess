@@ -1,0 +1,7 @@
+Require all granted
+Options -Indexes
+
+# Доступні лише дві точки входу; решта — 404
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteRule !^(webhook|contentful-webhook|download)\.php$ - [R=404,L]
